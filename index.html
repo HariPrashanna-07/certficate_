@@ -1,266 +1,172 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Certifications | Portfolio</title>
 
-```
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #020617;
+            overflow-x: hidden;
+        }
 
-<style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: radial-gradient(circle at top left, #1e293b, #0f172a);
-        min-height: 100vh;
-    }
+        /* Improved Animated Blobs */
+        .blob {
+            position: fixed;
+            filter: blur(100px);
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: move 25s infinite alternate ease-in-out;
+        }
 
-    /* Animated background blob */
-    .blob {
-        position: fixed;
-        width: 500px;
-        height: 500px;
-        background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(168,85,247,0.2));
-        filter: blur(80px);
-        border-radius: 50%;
-        z-index: -1;
-        animation: move 20s infinite alternate ease-in-out;
-    }
+        .blob-1 { width: 500px; height: 500px; background: #3b82f6; top: -10%; left: -10%; }
+        .blob-2 { width: 400px; height: 400px; background: #a855f7; bottom: -10%; right: -10%; animation-delay: -5s; }
+        .blob-3 { width: 300px; height: 300px; background: #ec4899; top: 40%; left: 40%; animation-duration: 30s; }
 
-    @keyframes move {
-        from { transform: translate(-10%, -10%); }
-        to { transform: translate(20%, 20%); }
-    }
+        @keyframes move {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 50px) scale(1.1); }
+        }
 
-    .group:hover {
-        transform: translateY(-5px) scale(1.03);
-    }
-</style>
-```
+        .cert-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
+        .cert-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Smooth reveal for content */
+        .reveal {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 
-<body class="text-gray-100 antialiased">
+<body class="text-slate-200 antialiased selection:bg-blue-500/30">
 
-<div class="blob"></div>
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
 
-<div class="max-w-6xl mx-auto py-16 px-6">
+<div class="max-w-7xl mx-auto py-20 px-6">
 
-```
-<!-- Header -->
-<header class="text-center mb-16">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
-        🎓 My Certifications
-    </h1>
-    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        A showcase of my continuous learning journey and technical milestones in Software Engineering and Data Science.
-    </p>
-</header>
+    <header class="text-center mb-20 reveal">
+        <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6 inline-block">
+            Milestones & Achievements
+        </span>
+        <h1 class="text-6xl md:text-7xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+            Certifications
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            A curated collection of technical credentials and specialized training in 
+            <span class="text-blue-400">Software Engineering</span> and <span class="text-purple-400">AI Intelligence</span>.
+        </p>
+    </header>
 
-<!-- Grid -->
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/21DDA4EB13644" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
+        <a href="https://www.udemy.com/certificate/UC-4213603a-3830-4670-9138-428624ba8fce/" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-blue-500/50 to-purple-600/50">
+            
+            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <span class="text-[10px] font-bold py-1 px-3 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">AI / LLM</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">AI Engineer Core Track: LLM & RAG</h2>
+                    <p class="text-slate-500 text-sm">Udemy • Mastered QLoRA, Agents, and Vector DBs.</p>
+                </div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl h-full border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-blue-400">Software Engineer Intern</h2>
-            <p class="text-blue-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">June 2025</span>
-                <span class="text-xs font-bold uppercase text-blue-500">View →</span>
+                <div class="mt-8 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">March 2026</span>
+                    <span class="flex items-center gap-2 text-sm font-bold text-blue-400">
+                        Credentials <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/1fd636a2906b" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+        <a href="https://www.hackerrank.com/certificates/21DDA4EB13644" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-cyan-500/50 to-blue-600/50">
+            
+            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <span class="text-[10px] font-bold py-1 px-3 bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">ENGINEERING</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">Software Engineer Intern</h2>
+                    <p class="text-slate-500 text-sm">HackerRank • Industry-standard skills validation.</p>
+                </div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-purple-400">Software Engineer</h2>
-            <p class="text-purple-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">April 2025</span>
-                <span class="text-xs font-bold uppercase text-purple-500">View →</span>
+                <div class="mt-8 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">June 2025</span>
+                    <span class="flex items-center gap-2 text-sm font-bold text-cyan-400">
+                        View Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </span>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
 
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/4b171698b9f5" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+        <a href="https://www.hackerrank.com/certificates/4b171698b9f5" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-emerald-500/50 to-teal-600/50">
+            
+            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <span class="text-[10px] font-bold py-1 px-3 bg-emerald-500/20 text-emerald-300 rounded-full border border-emerald-500/30">DATA</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">Intermediate SQL</h2>
+                    <p class="text-slate-500 text-sm">HackerRank • Complex queries and optimization.</p>
+                </div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-emerald-400">Intermediate SQL</h2>
-            <p class="text-emerald-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Feb 2025</span>
-                <span class="text-xs font-bold uppercase text-emerald-500">View →</span>
+                <div class="mt-8 flex items-center justify-between">
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">Feb 2025</span>
+                    <span class="flex items-center gap-2 text-sm font-bold text-emerald-400">
+                        View Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </span>
+                </div>
             </div>
+        </a>
+
         </div>
-    </a>
 
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/06a93bcdec1e" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-orange-400">Basic SQL</h2>
-            <p class="text-orange-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Nov 2024</span>
-                <span class="text-xs font-bold uppercase text-orange-500">View →</span>
-            </div>
+    <footer class="mt-32 pt-10 border-t border-white/5 text-center">
+        <p class="text-slate-500 text-sm tracking-widest uppercase">
+            &copy; 2026 • Designed for Excellence
+        </p>
+        <div class="mt-4 flex justify-center gap-6 text-slate-400">
+             <a href="#" class="hover:text-blue-400 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+             <a href="#" class="hover:text-blue-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
         </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/9ae035d13b25" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-indigo-400">Problem Solving</h2>
-            <p class="text-indigo-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Nov 2024</span>
-                <span class="text-xs font-bold uppercase text-indigo-500">View →</span>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/a136dd382288" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-yellow-400">Python</h2>
-            <p class="text-yellow-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Completed</span>
-                <span class="text-xs font-bold uppercase text-yellow-500">View →</span>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://1drv.ms/i/c/8dbf1b8d37343aad/EeSfYwCa9MdKo30Pcos3QFwBovwR8HCUSqEWCFvyNuHTcg?e=bGbx9o" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-rose-700 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-red-400">Internship</h2>
-            <p class="text-red-300 font-medium">RedMind Technologies</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Completed</span>
-                <span class="text-xs font-bold uppercase text-red-500">View →</span>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://1drv.ms/i/c/8dbf1b8d37343aad/Ef6lzlnfJ4JBp9ViweiESKsBXE8JfEq4JUCNI8xQvFaqlg?e=L3a7Kl" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-cyan-400">Python for Data Science</h2>
-            <p class="text-cyan-300 font-medium">NPTEL</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Sept 2025</span>
-                <span class="text-xs font-bold uppercase text-cyan-500">View →</span>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://www.hackerrank.com/certificates/iframe/a990f3ca7758" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-cyan-400">Problem Solving (Intermediate)</h2>
-            <p class="text-cyan-300 font-medium">HackerRank</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Jan 2026</span>
-                <span class="text-xs font-bold uppercase text-cyan-500">View →</span>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card -->
-    <a href="https://www.udemy.com/certificate/UC-4213603a-3830-4670-9138-428624ba8fce/" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-cyan-400">
-                AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents
-            </h2>
-            <p class="text-cyan-300 font-medium">Udemy</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">Mar 2026</span>
-                <span class="text-xs font-bold uppercase text-cyan-500">View →</span>
-            </div>
-        </div>
-    </a>
-    <!-- Card -->
-    <a href="https://1drv.ms/b/c/8dbf1b8d37343aad/IQC0yCZvYLbiRZHS2VteA34AAcJTUjLYbmyh0xSzO2J2_GE?e=TdZiCn" target="_blank" rel="noopener noreferrer"
-       class="group relative block p-[2px] rounded-2xl transition-all duration-300">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity"></div>
-
-        <div class="relative bg-slate-900/90 backdrop-blur-xl p-8 rounded-2xl border border-slate-700">
-            <h2 class="text-2xl font-bold mb-2 group-hover:text-cyan-400">
-                Design Thinking a Primer
-            </h2>
-            <p class="text-cyan-300 font-medium">Nptel</p>
-
-            <div class="mt-4 flex justify-between">
-                <span class="text-sm text-gray-500">May 2026</span>
-                <span class="text-xs font-bold uppercase text-cyan-500">View →</span>
-            </div>
-        </div>
-    </a>
-
+    </footer>
 </div>
 
-<!-- Footer -->
-<footer class="mt-20 text-center text-gray-500 text-sm">
-    &copy; 2026 | Built with Passion & Tailwind CSS
-</footer>
-```
+<script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+</script>
 
-</div>
 </body>
 </html>

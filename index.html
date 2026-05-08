@@ -16,155 +16,255 @@
             overflow-x: hidden;
         }
 
-        /* Improved Animated Blobs */
         .blob {
             position: fixed;
             filter: blur(100px);
             z-index: -1;
             border-radius: 50%;
-            opacity: 0.4;
+            opacity: 0.3;
             animation: move 25s infinite alternate ease-in-out;
         }
-
         .blob-1 { width: 500px; height: 500px; background: #3b82f6; top: -10%; left: -10%; }
-        .blob-2 { width: 400px; height: 400px; background: #a855f7; bottom: -10%; right: -10%; animation-delay: -5s; }
-        .blob-3 { width: 300px; height: 300px; background: #ec4899; top: 40%; left: 40%; animation-duration: 30s; }
+        .blob-2 { width: 400px; height: 400px; background: #a855f7; bottom: -10%; right: -10%; }
 
         @keyframes move {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(100px, 50px) scale(1.1); }
+            from { transform: translate(0, 0); }
+            to { transform: translate(100px, 100px); }
         }
 
         .cert-card {
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
-
         .cert-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Smooth reveal for content */
-        .reveal {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            transform: translateY(-8px);
         }
     </style>
 </head>
 
-<body class="text-slate-200 antialiased selection:bg-blue-500/30">
+<body class="text-slate-200 antialiased">
 
 <div class="blob blob-1"></div>
 <div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
 
-<div class="max-w-7xl mx-auto py-20 px-6">
+<div class="max-w-7xl mx-auto py-16 px-6">
 
-    <header class="text-center mb-20 reveal">
-        <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6 inline-block">
-            Milestones & Achievements
-        </span>
-        <h1 class="text-6xl md:text-7xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
-            Certifications
+    <header class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 leading-tight">
+            🎓 Professional Certifications
         </h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A curated collection of technical credentials and specialized training in 
-            <span class="text-blue-400">Software Engineering</span> and <span class="text-purple-400">AI Intelligence</span>.
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            A comprehensive record of my technical expertise, specialized training, and career milestones.
         </p>
     </header>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
         <a href="https://www.udemy.com/certificate/UC-4213603a-3830-4670-9138-428624ba8fce/" target="_blank" 
-           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-blue-500/50 to-purple-600/50">
-            
-            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-purple-500 to-pink-500">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <span class="text-[10px] font-bold py-1 px-3 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">AI / LLM</span>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-purple-500/10 rounded-2xl text-purple-400"><i data-lucide="cpu"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-purple-500/20 rounded text-purple-300">AI / LLM</span>
                     </div>
-                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">AI Engineer Core Track: LLM & RAG</h2>
-                    <p class="text-slate-500 text-sm">Udemy • Mastered QLoRA, Agents, and Vector DBs.</p>
+                    <h2 class="text-xl font-bold group-hover:text-purple-400 transition-colors">AI Engineer Core Track</h2>
+                    <p class="text-slate-500 text-sm mt-2">Udemy • LLM Engineering, RAG, QLoRA, Agents</p>
                 </div>
-
-                <div class="mt-8 flex items-center justify-between">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">March 2026</span>
-                    <span class="flex items-center gap-2 text-sm font-bold text-blue-400">
-                        Credentials <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </span>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">MAR 2026</span>
+                    <span class="text-xs font-bold text-purple-500">VIEW →</span>
                 </div>
             </div>
         </a>
 
         <a href="https://www.hackerrank.com/certificates/21DDA4EB13644" target="_blank" 
-           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-cyan-500/50 to-blue-600/50">
-            
-            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-blue-500 to-cyan-500">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400 group-hover:scale-110 transition-transform">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                        <span class="text-[10px] font-bold py-1 px-3 bg-cyan-500/20 text-cyan-300 rounded-full border border-cyan-500/30">ENGINEERING</span>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400"><i data-lucide="terminal"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-blue-500/20 rounded text-blue-300">INTERN</span>
                     </div>
-                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">Software Engineer Intern</h2>
-                    <p class="text-slate-500 text-sm">HackerRank • Industry-standard skills validation.</p>
+                    <h2 class="text-xl font-bold group-hover:text-blue-400 transition-colors">Software Engineer Intern</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank Certification</p>
                 </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">JUNE 2025</span>
+                    <span class="text-xs font-bold text-blue-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
 
-                <div class="mt-8 flex items-center justify-between">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">June 2025</span>
-                    <span class="flex items-center gap-2 text-sm font-bold text-cyan-400">
-                        View Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </span>
+        <a href="https://www.hackerrank.com/certificates/iframe/a990f3ca7758" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-cyan-500 to-blue-600">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400"><i data-lucide="code"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-cyan-500/20 rounded text-cyan-300">DSA</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-cyan-400 transition-colors">Problem Solving (Int.)</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank • Intermediate Algorithms</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">JAN 2026</span>
+                    <span class="text-xs font-bold text-cyan-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://1drv.ms/i/c/8dbf1b8d37343aad/Ef6lzlnfJ4JBp9ViweiESKsBXE8JfEq4JUCNI8xQvFaqlg?e=L3a7Kl" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-yellow-500 to-orange-500">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-yellow-500/10 rounded-2xl text-yellow-400"><i data-lucide="pie-chart"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-yellow-500/20 rounded text-yellow-300">DATA SCIENCE</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-yellow-400 transition-colors">Python for Data Science</h2>
+                    <p class="text-slate-500 text-sm mt-2">NPTEL Certification</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">SEPT 2025</span>
+                    <span class="text-xs font-bold text-yellow-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://1drv.ms/b/c/8dbf1b8d37343aad/IQC0yCZvYLbiRZHS2VteA34AAcJTUjLYbmyh0xSzO2J2_GE?e=TdZiCn" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-emerald-500 to-teal-500">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400"><i data-lucide="lightbulb"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-emerald-500/20 rounded text-emerald-300">UX/DESIGN</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-emerald-400 transition-colors">Design Thinking Primer</h2>
+                    <p class="text-slate-500 text-sm mt-2">NPTEL Certification</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">MAY 2026</span>
+                    <span class="text-xs font-bold text-emerald-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/1fd636a2906b" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-indigo-500 to-purple-600">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-indigo-500/10 rounded-2xl text-indigo-400"><i data-lucide="layers"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-indigo-500/20 rounded text-indigo-300">ENGINEERING</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-indigo-400 transition-colors">Software Engineer</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank Certification</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">APRIL 2025</span>
+                    <span class="text-xs font-bold text-indigo-500">VIEW →</span>
                 </div>
             </div>
         </a>
 
         <a href="https://www.hackerrank.com/certificates/4b171698b9f5" target="_blank" 
-           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800/50 hover:bg-gradient-to-br from-emerald-500/50 to-teal-600/50">
-            
-            <div class="relative bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-blue-400 to-teal-400">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
                 <div>
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="p-3 bg-emerald-500/10 rounded-2xl text-emerald-400 group-hover:scale-110 transition-transform">
-                            <i data-lucide="database"></i>
-                        </div>
-                        <span class="text-[10px] font-bold py-1 px-3 bg-emerald-500/20 text-emerald-300 rounded-full border border-emerald-500/30">DATA</span>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-teal-500/10 rounded-2xl text-teal-400"><i data-lucide="database"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-teal-500/20 rounded text-teal-300">DATABASE</span>
                     </div>
-                    <h2 class="text-xl font-bold mb-2 group-hover:text-white transition-colors">Intermediate SQL</h2>
-                    <p class="text-slate-500 text-sm">HackerRank • Complex queries and optimization.</p>
+                    <h2 class="text-xl font-bold group-hover:text-teal-400 transition-colors">Intermediate SQL</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank • Advanced Querying</p>
                 </div>
-
-                <div class="mt-8 flex items-center justify-between">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">Feb 2025</span>
-                    <span class="flex items-center gap-2 text-sm font-bold text-emerald-400">
-                        View Certificate <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </span>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">FEB 2025</span>
+                    <span class="text-xs font-bold text-teal-500">VIEW →</span>
                 </div>
             </div>
         </a>
 
-        </div>
+        <a href="https://www.hackerrank.com/certificates/06a93bcdec1e" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-orange-400 to-red-400">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-orange-500/10 rounded-2xl text-orange-400"><i data-lucide="database-zap"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-orange-500/20 rounded text-orange-300">DATABASE</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-orange-400 transition-colors">Basic SQL</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank Certification</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">NOV 2024</span>
+                    <span class="text-xs font-bold text-orange-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
 
-    <footer class="mt-32 pt-10 border-t border-white/5 text-center">
-        <p class="text-slate-500 text-sm tracking-widest uppercase">
-            &copy; 2026 • Designed for Excellence
-        </p>
-        <div class="mt-4 flex justify-center gap-6 text-slate-400">
-             <a href="#" class="hover:text-blue-400 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-             <a href="#" class="hover:text-blue-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-        </div>
+        <a href="https://www.hackerrank.com/certificates/9ae035d13b25" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-slate-500 to-slate-400">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-slate-500/10 rounded-2xl text-slate-400"><i data-lucide="brain-circuit"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-500/20 rounded text-slate-300">DSA</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-slate-300 transition-colors">Problem Solving</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank • Core Fundamentals</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">NOV 2024</span>
+                    <span class="text-xs font-bold text-slate-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/a136dd382288" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-yellow-400 to-blue-500">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-yellow-500/10 rounded-2xl text-yellow-400"><i data-lucide="box"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-yellow-500/20 rounded text-yellow-300">LANGUAGE</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-yellow-400 transition-colors">Python (Basic)</h2>
+                    <p class="text-slate-500 text-sm mt-2">HackerRank Certification</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">COMPLETED</span>
+                    <span class="text-xs font-bold text-yellow-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://1drv.ms/i/c/8dbf1b8d37343aad/EeSfYwCa9MdKo30Pcos3QFwBovwR8HCUSqEWCFvyNuHTcg?e=bGbx9o" target="_blank" 
+           class="cert-card group relative block p-px rounded-3xl overflow-hidden bg-slate-800 hover:bg-gradient-to-br from-red-600 to-rose-400">
+            <div class="relative bg-slate-950 p-8 rounded-[23px] h-full flex flex-col justify-between border border-white/5">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="p-3 bg-red-500/10 rounded-2xl text-red-400"><i data-lucide="briefcase"></i></div>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-red-500/20 rounded text-red-300">WORK</span>
+                    </div>
+                    <h2 class="text-xl font-bold group-hover:text-red-400 transition-colors">Internship</h2>
+                    <p class="text-slate-500 text-sm mt-2">RedMind Technologies Experience</p>
+                </div>
+                <div class="mt-6 flex justify-between items-center">
+                    <span class="text-xs text-slate-600 font-bold">COMPLETED</span>
+                    <span class="text-xs font-bold text-red-500">VIEW →</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <footer class="mt-24 pt-8 border-t border-white/5 text-center text-slate-500 text-xs tracking-widest uppercase">
+        &copy; 2026 | Developed by Engineering Excellence
     </footer>
 </div>
 
 <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
 </script>
 
